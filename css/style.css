@@ -1,0 +1,645 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/*
+@font-face {
+    font-family: "MyFont";
+    src: url("/fonts/29LT Kaff.ttf") format("ttf"),
+         url("/fonts/29LT Kaff.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik";
+    box-sizing: border-box;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-130deg, #16473a, #36a888);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bi-arrow-right{
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    color: #f5f5f5;
+    font-size: 2rem;
+    padding: 0.5rem 0.7rem;
+    transition: all 0.3s ease;
+}
+.bi-arrow-right:hover{
+    background-color: #f5f5f540;
+}
+
+
+#header{
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 2rem 3rem 0;
+    z-index: 99999;
+}
+#header img{
+    height: 40%;
+    min-height: 7rem;
+    max-height: 16rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#header .title{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+#header .title h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f5f5f5;
+}
+#header .title h5{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #d0d0d0;
+}
+
+#index{
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 3rem 1rem;
+}
+#index nav{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    display: block;
+}
+
+#index nav h2{
+    color: #f5f5f5; /* a09fa0 */
+    font-size: 2.7rem;
+    font-weight: 600;
+    margin-bottom: 0.65rem;
+}
+#index nav p{
+    color: #f5f5f5;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+#index nav .boxs{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem 5rem 0;
+    gap: 1.25rem;
+}
+
+#index nav .boxs .box{
+    width: calc(30% - 1.25rem);
+    min-width: 22rem;
+    min-height: 5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    background-color: #f5f5f5;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 1rem #00000030;
+}
+#index nav .boxs .box:hover{
+    box-shadow: 0 0 2.5rem #00000050;
+}
+#index nav .boxs .box button{
+    width: 100%;
+    cursor: pointer;
+    height: 5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #16473a;
+    outline: none;
+    background: none;
+    border: none;
+    border-top-right-radius: 0.625rem;
+    border-top-left-radius: 0.625rem;
+}
+
+#index nav .boxs .list{
+    display: none;
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    transition: all 0.3s ease;
+}
+#index nav .boxs .list a{
+    padding: 0.5rem 1.5rem;
+    color: #16473a;
+    border-radius: 3.1rem;
+    background-color: #f5f5f5;
+    border: 1px solid #a09fa070;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#index nav .boxs .list a:hover{
+    border: 1px solid #16473a;
+}
+
+#index nav .boxs .list .active{
+    padding: 0.5rem 1.5rem;
+    color: #f5f5f5;
+    border-radius: 3.1rem;
+    background-color: #16473a;
+    border: 1px solid #16473a;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#index nav .boxs .list .active:hover{
+    background-color: #f5f5f5;
+    color: #16473a;
+    border: 1px solid #16473a;
+}
+
+#list_1{
+    display: none;
+}
+#list_2{
+    display: none;
+}
+#list_3{
+    display: none;
+}
+#list_4{
+    display: none;
+}
+#list_5{
+    display: none;
+}
+
+
+#index nav .boxs .box_link{
+    width: calc(30% - 1.25rem);
+    min-width: 22rem;
+    min-height: 5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #f5f5f5;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 1rem #00000030;
+}
+#index nav .boxs .box_link:hover{
+    box-shadow: 0 0 2.5rem #00000050;
+}
+#index nav .boxs .box_link a{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    height: 5rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #16473a;
+    outline: none;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+
+header{
+    width: 100%;
+    height: 15vh;
+    text-align: center;
+    align-items: start;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    display: flex;
+    padding: 2rem 2rem 0;
+    z-index: 99999;
+    background-color: #16473a;
+}
+header img{
+    height: 60%;
+    min-height: 5rem;
+    max-height: 6rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+header .title{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+header .title h3{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5f5f5;
+}
+header .title h5{
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: #d0d0d0;
+}
+
+
+#level{
+    width: 100%;
+    height: 100%;
+    min-height: 85vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 5rem 1rem 12rem;
+    background-color: #16473a;
+}
+#level nav{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    display: block;
+}
+
+#level nav h2{
+    color: #f5f5f5; /* a09fa0 */
+    font-size: 2.7rem;
+    font-weight: 600;
+    margin-bottom: 0.65rem;
+}
+#level nav p{
+    color: #d7e6e5;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+#level nav .navbar{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 3rem 2rem;
+    padding: 5rem 1rem 0;
+}
+
+#level nav .boxs{
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    border-radius: 2.4rem;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    border: 1px solid #36a888;
+}
+
+#level nav .month_title {
+    color: #36a888;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    padding: 0 1rem;
+    top: -1rem;
+    right: 2rem;
+    background: #16473a;
+}
+
+#level nav .week_title {
+    color: #36a888;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    padding: 0 1rem;
+    top: -1rem;
+    right: 2rem;
+    background: #16473a;
+}
+
+
+#level nav .boxs a{
+    text-decoration: none;
+    cursor: pointer;
+}
+#level nav .boxs .box{
+    width: 20rem;
+    min-height: 3rem;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1.7rem 0.5rem 0.5rem;
+    inset: 0;
+    background: #36a88843;
+    border: 1px solid #36a88843;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+#level nav .boxs .test_box{
+    background: none;
+    border: 1px solid #36a888;
+}
+
+#level nav .boxs .box:hover{
+    box-shadow: 0 0 1.9rem #2b1a1a30;
+}
+#level nav .boxs .box h4{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5f5f5;
+}
+#level nav .boxs .box a{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #16473a;
+    padding: 0.6rem 2rem;
+    border-radius: 2rem;
+    background-color: #f5f5f510;
+    border: 1px solid #f5f5f5aa;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+#level nav .boxs .test_box a{
+    background: none;
+    background-color: #36a88830;
+    border: 1px solid #36a888;
+}
+#level nav .boxs .box a i{
+    margin-left: 0.65rem;
+    font-size: 1rem;
+}
+#level nav .boxs .box a:hover{
+    color: #16473a;
+    background-color: #f5f5f5;
+}
+#level nav .boxs .test_box a:hover{
+    color: #f5f5f5;
+    background-color: #36a888;
+}
+
+
+#level nav .boxs .now_value{
+    width: 20rem;
+    min-height: 3rem;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    inset: 0;
+    background: #f5f5f5;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #fff;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#level nav .boxs .now_value:hover{
+    box-shadow: 0 0 1.9rem #2b1a1a30;
+}
+#level nav .boxs .now_value h4{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #16473a;
+}
+#level nav .boxs .now_value a{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #fff;
+    padding: 0.6rem 2rem;
+    border-radius: 2rem;
+    background-color: #16473a;
+    border: 1px solid #16473a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+#level nav .boxs .now_value a i{
+    margin-left: 0.65rem;
+    font-size: 1rem;
+}
+#level nav .boxs .now_value a:hover{
+    color: #16473a;
+    background: none;
+}
+
+
+
+
+footer{
+    width: 100%;
+    height: 3.75rem;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.65rem;
+    background: #16473a40;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+footer .copyright{
+    display: flex;
+    font-size: 0.9rem;
+    color: #f5f5f5;
+}
+
+footer .dev{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+footer .dev p{
+    display: flex;
+    font-size: 0.9rem;
+    color: #f5f5f5;
+    margin-left: 1rem;
+}
+footer .dev a{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+footer .dev a p{
+    font-size: 0.8rem;
+    color: #f5f5f5;
+    margin-right: 0.7rem;
+    display: grid;
+    line-height: 1.2rem;
+}
+footer .dev a img{
+    height: 2.2rem;
+    color: #f5f5f5;
+}
+
+
+
+#preloader {
+    right: 0;
+    top: 0;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #16473a;
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease infinite;
+    transition: opacity 0.5s ease;
+    z-index: 999999;
+}
+.preloader_img {
+    height: 12rem;
+}
+
+
+/*1200*/
+@media (max-width: 1200px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+
+/*1055*/
+@media (max-width: 1055px) {
+
+}
+
+
+/*850*/
+@media (max-width: 850px) {
+    html {
+        font-size: 85%;
+    }
+}
+
+
+/*700*/
+@media (max-width: 700px) {
+    #header{
+        height: 30vh;
+    }
+    #index{
+        min-height: 70vh;
+    }
+    footer{
+        position: none;
+        height: 7rem;
+        justify-content: center;
+        display: flex;
+    }
+    footer .copyright{
+        display: flex;
+    }    
+    footer .dev{
+        width: 100%;
+        display: flex;
+    }
+}
+
+
+/*600*/
+@media (max-width: 600px) {
+    html {
+        font-size: 80%;
+    }
+    .bi-arrow-right{
+        right: 2rem;
+    }
+    #header{
+        height: 25vh;
+    }
+    #index{
+        min-height: 75vh;
+    }
+    #index nav .boxs .box{
+        width: 80%;
+        min-width: 24rem;
+    }
+}
+
+/*380*/
+@media (max-width: 380px) {
+    html {
+        font-size: 75%;
+    }
+}
