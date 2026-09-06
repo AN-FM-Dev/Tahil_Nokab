@@ -1,5 +1,5 @@
 <footer>
-    <p class="copyright">جميع الحقوق محفوظة لـ نخــــب © <?php echo /* date("Y") . */ " 1447هـ"; ?></p>
+    <p class="copyright">جميع الحقوق محفوظة لـ النخــــبة © <?php echo /* date("Y") . */ " 1448هـ"; ?></p>
     <div class="dev">
         <p>تم تطويره بواسطة</p>
         <a href="https://api.whatsapp.com/send?phone=201095786980" target="_blank">
@@ -10,7 +10,7 @@
 
 
 <div id="preloader">
-    <img src="image/feather_1.svg?v=<?= time() ?>" class="preloader_img" alt="Tahil">
+    <img src="image/book_1.svg?v=<?= time() ?>" class="preloader_img" alt="Tahil">
 </div>
     
 <script src="js/loading.js?v=<?= time() ?>"></script>
