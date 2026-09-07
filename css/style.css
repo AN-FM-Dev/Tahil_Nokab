@@ -169,7 +169,7 @@ body {
     text-align: center;
     justify-content: center;
     display: flex;
-    padding: 1rem 1rem 10rem;
+    padding: 1rem 1rem 3rem;
 }
 #index nav{
     width: 100%;
@@ -627,7 +627,7 @@ footer .dev a img{
         min-height: 70vh;
     }
     footer{
-        position: none;
+        position: relative;
         height: 7rem;
         justify-content: center;
         display: flex;
@@ -677,7 +677,7 @@ footer .dev a img{
         max-height: 4rem;
     }
     #level{
-        padding: 15rem 3rem 8rem;
+        padding: 7rem 3rem;
     }
     #level nav h2{
         font-size: 2rem;
