@@ -138,10 +138,10 @@ class EanUpc extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Barc
 				'0' => '0001101',
 				'1' => '0011001',
 				'2' => '0010011',
-				'3' => '011_1101',
+				'3' => '0111101',
 				'4' => '0100011',
 				'5' => '0110001',
-				'6' => '01011_11',
+				'6' => '0101111',
 				'7' => '0111011',
 				'8' => '0110111',
 				'9' => '0001011'],
@@ -163,10 +163,10 @@ class EanUpc extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Barc
 				'3' => '1000010',
 				'4' => '1011100',
 				'5' => '1001110',
-				'6' => '10_10000',
+				'6' => '1010000',
 				'7' => '1000100',
 				'8' => '1001000',
-				'9' => '1110_100']
+				'9' => '1110100']
 		];
 
 		$parities = [
@@ -218,7 +218,7 @@ class EanUpc extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Barc
 			for ($i = 0; $i < 6; ++$i) {
 				$seq .= $codes[$p[$i]][$upceCode[$i]];
 			}
-			$seq .= '010_101'; // right guard bar
+			$seq .= '010101'; // right guard bar
 		} else {
 			$bararray = ['code' => $code, 'maxw' => 0, 'maxh' => 1, 'bcode' => []];
 			$halfLen = ceil($length / 2);
@@ -232,7 +232,7 @@ class EanUpc extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Barc
 					$seq .= $codes[$p[$i - 1]][$code[$i]];
 				}
 			}
-			$seq .= '010_10'; // center guard bar
+			$seq .= '01010'; // center guard bar
 			for ($i = $halfLen; $i < $length; ++$i) {
 				$seq .= $codes['C'][$code[(int) $i]];
 			}

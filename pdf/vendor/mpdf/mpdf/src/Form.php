@@ -668,7 +668,7 @@ class Form
 				$this->mpdf->SetFColor($color);
 				$this->mpdf->SetDColor($color);
 			}
-			$this->mpdf->Circle($cx, $cy, $radius, 'I');
+			$this->mpdf->Circle($cx, $cy, $radius, 'D');
 			if (!empty($objattr['checked'])) {
 				$this->mpdf->Circle($cx, $cy, $radius * 0.4, 'DF');
 			}

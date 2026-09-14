@@ -3932,7 +3932,7 @@ class TTFontFile
 				$os2 = $this->_set_ushort($os2, 50, 0x0000); // ulCharRange (Unicode ranges) bits  88-95 | 80-87
 				$os2 = $this->_set_ushort($os2, 52, 0x0000); // ulCharRange (Unicode ranges) bits  72-79 | 64-71
 				$os2 = $this->_set_ushort($os2, 54, 0x0000); // ulCharRange (Unicode ranges) bits  120-127 | 112-119
-				$os2 = $this->_set_ushort($os2, 56, 0x0000); // ulCharRange (Unicode ranges) bits  104-11| 96-103
+				$os2 = $this->_set_ushort($os2, 56, 0x0000); // ulCharRange (Unicode ranges) bits  104-111 | 96-103
 			}
 			$os2 = $this->_set_ushort($os2, 46, $nonBMP); // Unset Bit 57 (indicates non-BMP) - for interactive forms
 

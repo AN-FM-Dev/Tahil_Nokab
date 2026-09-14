@@ -32,16 +32,16 @@ class S25 extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Barcode
 	private function init($code, $checksum)
 	{
 		$chr = [
-			'0' => '10_1011101110_10',
-			'1' => '1110_1010_101110',
-			'2' => '101110_10101110',
-			'3' => '11101110_1010_10',
-			'4' => '10_101110_101110',
-			'5' => '1110_101110_1010',
-			'6' => '1011101110_1010',
-			'7' => '10_101011101110',
-			'8' => '10_1011101110_10',
-			'9' => '101110_101110_10',
+			'0' => '10101110111010',
+			'1' => '11101010101110',
+			'2' => '10111010101110',
+			'3' => '11101110101010',
+			'4' => '10101110101110',
+			'5' => '11101011101010',
+			'6' => '10111011101010',
+			'7' => '10101011101110',
+			'8' => '10101110111010',
+			'9' => '10111010111010',
 		];
 
 		$checkdigit = '';
@@ -57,7 +57,7 @@ class S25 extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Barcode
 			$code = '0' . $code;
 		}
 
-		$seq = '110110_10';
+		$seq = '11011010';
 		$clen = strlen($code);
 		for ($i = 0; $i < $clen; ++$i) {
 			$digit = $code[$i];
@@ -68,7 +68,7 @@ class S25 extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Barcode
 			$seq .= $chr[$digit];
 		}
 
-		$seq .= '110_1011';
+		$seq .= '1101011';
 		$bararray = ['code' => $code, 'maxw' => 0, 'maxh' => 1, 'bcode' => []];
 		$bararray['checkdigit'] = $checkdigit;
 
