@@ -8,7 +8,9 @@ require __DIR__ . '/pdf/vendor/autoload.php';
 require_once __DIR__ . '/api/google_sheets.php';
 
 $sheets = [
-    'elmy'   => ['id' => $elmy_monitoring,  'range' => 'report!G3']
+    'elmy'     => ['id' => $elmy_monitoring,     'range' => 'report!G9'],
+    'ahadeth'  => ['id' => $ahadeth_monitoring,  'range' => 'report!G9'],
+    'fekh'     => ['id' => $fekh_monitoring,     'range' => 'report!G9']
 ];
 
 $values = [];
@@ -19,9 +21,9 @@ foreach ($sheets as $key => $sheet) {
     $values[$key] = !empty($cellValue) ? htmlspecialchars($cellValue[0][0] ?? '') : '';
 }
 
-$progress_elmy = 89;
-$progress_ahadeth = 45;
-$progress_fekh = 79;
+$progress_elmy = $values['elmy'] ?? 0;
+$progress_ahadeth = $values['ahadeth'] ?? 0;
+$progress_fekh = $values['fekh'] ?? 0;
 
 ?>
 
@@ -60,25 +62,35 @@ $progress_fekh = 79;
                 <h4><div></div> المتون العلمية</h4>
                 <div class="title">
                     <p>نسبة الإنجاز</p>
-                    <span><?= $progress_elmy; ?>%</span>
+                    <span><?= $progress_elmy; ?></span>
                 </div>
-                <div class="bar" style="--progress: <?= $progress_elmy; ?>%;"></div>
+                <div class="bar" style="--progress: <?= $progress_elmy; ?>;"></div>
             </a>
             <a href="level_1.php?track=ahadeth" class="box box_2">
                 <h4><div></div> الأحاديث النبوية</h4>
                 <div class="title">
                     <p>نسبة الإنجاز</p>
-                    <span><?= $progress_ahadeth; ?>%</span>
+                    <span><?= $progress_ahadeth; ?></span>
                 </div>
-                <div class="bar" style="--progress: <?= $progress_ahadeth; ?>%;"></div>
+                <div class="bar" style="--progress: <?= $progress_ahadeth; ?>;"></div>
             </a>
             <a href="level_1.php?track=fekh" class="box box_3">
                 <h4><div></div> الفقه</h4>
                 <div class="title">
                     <p>نسبة الإنجاز</p>
-                    <span><?= $progress_fekh; ?>%</span>
+                    <span><?= $progress_fekh; ?></span>
                 </div>
-                <div class="bar" style="--progress: <?= $progress_fekh; ?>%;"></div>
+                <div class="bar" style="--progress: <?= $progress_fekh; ?>;"></div>
+            </a>
+        </div>
+        <div class="boxs">
+            <!--a href="level_1.php?track=summation" class="summation_box box_4">
+                <h4><div></div> التقرير الجامع</h4>
+            </!--a-->
+            <a href="level_1.php?track=summation" class="summation_box box_4">
+                <hr>
+                <div>التقرير الجامع</div>
+                <hr>
             </a>
 
             <!--div class="box box_6">

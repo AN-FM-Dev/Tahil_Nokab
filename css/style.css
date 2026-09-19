@@ -123,7 +123,7 @@ body {
 
 #header{
     width: 100%;
-    height: 40vh;
+    height: 35vh;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -165,11 +165,11 @@ body {
 #index{
     width: 100%;
     height: 100%;
-    min-height: 60vh;
+    min-height: 65vh;
     text-align: center;
     justify-content: center;
     display: flex;
-    padding: 1rem 1rem 3rem;
+    padding: 1rem 1rem 10rem;
 }
 #index nav{
     width: 100%;
@@ -199,21 +199,20 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 2rem 3rem 0;
+    padding: 1rem 3rem 0;
     gap: 1.5rem;
 }
 
 #index nav .boxs .box{
     width: calc(25% - 1.25rem);
-    min-width: 18rem;
-    min-height: 13rem;
+    min-width: 20rem;
+    /* min-height: 13rem; */
     text-align: right;
     padding: 3rem 2.5rem;
     background-color: var(--color_3);
-    border-radius: 0.7rem;
+    border-radius: 0.75rem;
     transition: all 0.3s ease;
     cursor: pointer;
-    overflow: hidden;
     outline: none;
     cursor: pointer;
     text-decoration: none;
@@ -226,7 +225,6 @@ body {
     font-size: 1.6rem;
     color: var(--color_1);
     display: flex;
-    margin-bottom: 3rem;
 }
 #index nav .boxs .box h4 div{
     width: 0.3rem;
@@ -239,6 +237,7 @@ body {
     display: flex;
     justify-content: space-between;
     color: var(--color_1);
+    margin-top: 3rem;
 }
 #index nav .boxs .box .title p{
     font-size: 1rem;
@@ -268,6 +267,41 @@ body {
     background-color: var(--color_2);
     transition: width 0.6s ease;
 }
+
+
+#index nav .boxs .summation_box{
+    width: calc(25% - 1.25rem);
+    min-width: 20rem;
+    padding: 1.2rem 3.5rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    margin-top: 2rem;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: var(--color_1);
+    background-color: var(--color_3);
+}
+#index nav .boxs .summation_box:hover{
+    box-shadow: 0 0 2.5rem #00000030;
+}
+#index nav .boxs .summation_box hr{
+    width: 30%;
+    height: 0.1rem;
+    background-color: var(--color_1);
+    border: none;
+    outline: none;
+}
+#index nav .boxs .summation_box div{
+    width: 12rem;
+    font-size: 1.1rem;
+}
+
+
 
 
 header{

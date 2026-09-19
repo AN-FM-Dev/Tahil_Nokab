@@ -12,6 +12,37 @@ $track = $_GET['track'] ?? '';
 
 $spreadsheetId = ${$track . '_monitoring'};
 
+switch ($track) {
+    case 'elmy':
+        $view_sheet = "!G3";
+        $name_sheet = "المتون العلمية";
+        $pageName = "{$track}_week";
+        break;
+
+    case 'ahadeth':
+        $view_sheet = "!G5";
+        $name_sheet = "السنة النبوية";
+        $pageName = "{$track}_week";
+        break;
+  
+    case 'fekh':
+        $view_sheet = "!G6";
+        $name_sheet = "الفقه";
+        $pageName = "{$track}_week";
+        break;
+
+
+    case 'summation':
+        $view_sheet = "!G6";
+        $name_sheet = "التقرير الجامع";
+        $pageName = "{$track}_week";
+        break;
+
+    default:
+        die('Track not found');
+}
+
+
 use Mpdf\Mpdf;
 
 try {
@@ -26,14 +57,28 @@ try {
     $defaultFontConfig = (new \Mpdf\Config\FontVariables())->getDefaults();
     $fontData = $defaultFontConfig['fontdata'];
 
+    if ($track === 'summation') {
+        $format = [741, 377.18];
+        $marginLeft = 24.5;
+        $marginRight = 24.5;
+        $marginTop = 181;
+        $marginBottom = 5;
+    } else {
+        $format = [741, 494.88];
+        $marginLeft = 24.5;
+        $marginRight = 24.2;
+        $marginTop = 20;
+        $marginBottom = 5;
+    }
+
     $mpdf = new \Mpdf\Mpdf([
         'mode' => 'utf-8',
-        'format' => [741, 494.88],
+        'format' => $format,
         'orientation' => 'P',
-        'margin_left' => 24.5,
-        'margin_right' => 24.2,
-        'margin_top' => 20,
-        'margin_bottom' => 5,
+        'margin_left' => $marginLeft,
+        'margin_right' => $marginRight,
+        'margin_top' => $marginTop,
+        'margin_bottom' => $marginBottom,
         //'default_font_size' => 27,
         'tempDir' => $tempDir,
 
@@ -50,29 +95,7 @@ try {
         'default_font' => 'thmanyeah',
     ]);
 
-    switch ($track) {
-      case 'elmy':
-          $view_sheet = "!G3";
-          $name_sheet = "المتون العلمية";
-          $pageName = "{$track}_week";
-          break;
-
-  
-      case 'ahadeth':
-          $view_sheet = "!G5";
-          $name_sheet = "السنة النبوية";
-          $pageName = "{$track}_week";
-          break;
-  
-      case 'fekh':
-          $view_sheet = "!G6";
-          $name_sheet = "الفقه";
-          $pageName = "{$track}_week";
-          break;
-  
-      default:
-          die('Track not found');
-  }
+    
 
     if($week === "week_1"){$background = "{$track}_template_1"; $pageName = "level_1_1";}
     elseif($week === "week_2"){$background = "{$track}_template_2"; $pageName = "level_1_2";}
@@ -95,11 +118,17 @@ try {
 
     ob_start();
 
-    $ranges = [
-        "$pageName!A6:Y50",
-        "$pageName!X1",
-        "$pageName!X50",
-    ];
+    if ($track === 'summation') {
+        $ranges = [
+            "$pageName!A4:T7"
+        ];
+    } else {
+        $ranges = [
+            "$pageName!A6:Y50",
+            "$pageName!X1",
+            "$pageName!X50",
+        ];
+    }
 
     $response = $service->spreadsheets_values->batchGet($spreadsheetId, [
     'ranges' => $ranges
@@ -107,11 +136,11 @@ try {
 
     $valueRanges = $response->getValueRanges();
 
-    $valueRanges = $response->getValueRanges();
-
     $blockValues = $valueRanges[0]->getValues();
-    $cellValue_1 = $valueRanges[1]->getValues();
-    $cellValue_2 = $valueRanges[2]->getValues();
+    if (count($ranges) >= 3) {
+        $cellValue_1 = $valueRanges[1]->getValues();
+        $cellValue_2 = $valueRanges[2]->getValues();
+    }
 
     if ($pageName === "level_1_1") {$weekName = 'الأول';}
     elseif ($pageName === "level_1_2") {$weekName = 'الثاني';}
@@ -127,6 +156,12 @@ try {
     elseif ($pageName === "level_1_12") {$weekName = 'الثاني عشر';}
     elseif ($pageName === "level_1_13") {$weekName = 'الثالث عشر';}
     elseif ($pageName === "level_1_14") {$weekName = 'الرابع عشر';}
+
+    if ($track === 'summation') {
+        $sectionId = 'summation_week';
+    } else {
+        $sectionId = 'week';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -142,7 +177,8 @@ try {
 </head>
 <body>
 
-<section id="week">
+
+<section id="<?= $sectionId ?>">
 <?php if (!empty($cellValue_1)) { $T2 = $cellValue_1[0][0] ?? ''; ?>
   <div class="T2"><?= htmlspecialchars($T2); ?></div>
 <?php } ?>

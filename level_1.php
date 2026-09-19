@@ -36,28 +36,34 @@ $response = $service->spreadsheets_values->batchGet($spreadsheetId, [
 
 
     switch ($track) {
-      case 'elmy':
-          $view_sheet = "!G3";
-          $name_sheet = "المتون العلمية";
-          $pageName = "{$track}_week";
-          break;
+        case 'elmy':
+            $view_sheet = "!G3";
+            $name_sheet = "المتون العلمية";
+            $pageName = "{$track}_week";
+            break;
 
+        case 'ahadeth':
+            $view_sheet = "!G5";
+            $name_sheet = "السنة النبوية";
+            $pageName = "{$track}_week";
+            break;
   
-      case 'ahadeth':
-          $view_sheet = "!G5";
-          $name_sheet = "السنة النبوية";
-          $pageName = "{$track}_week";
-          break;
+        case 'fekh':
+            $view_sheet = "!G6";
+            $name_sheet = "الفقه";
+            $pageName = "{$track}_week";
+            break;
+
+
+        case 'summation':
+            $view_sheet = "!G6";
+            $name_sheet = "التقرير الجامع";
+            $pageName = "{$track}_week";
+            break;
   
-      case 'fekh':
-          $view_sheet = "!G6";
-          $name_sheet = "الفقه";
-          $pageName = "{$track}_week";
-          break;
-  
-      default:
-          die('Track not found');
-  }
+        default:
+            die('Track not found');
+    }
 
 ?>
 
@@ -85,7 +91,9 @@ $response = $service->spreadsheets_values->batchGet($spreadsheetId, [
 <header>
     <img src="image/logo_color.png?v=<?= time() ?>">
     <div div class="title">
-        <h3>رصد <?= $name_sheet; ?></h3>
+        <h3><?php 
+            if($name_sheet=="التقرير الجامع"){echo $name_sheet;}
+            else{echo 'رصد ' . $name_sheet;} ?></h3>
     </div>
 </header>
 

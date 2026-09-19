@@ -83,6 +83,48 @@
 
 
 
+
+#summation_week{
+    position: relative;
+}
+
+#summation_week table{
+    border-spacing: 7.4, 11.3px;
+    /* margin-right: 6pc; */
+    font-size: 28px;
+}
+#summation_week tr.last-row{
+    color: #b47d50;
+}
+#summation_week td,th{
+    height: 10.05pc;
+    padding: /*20.5px*/ 0;
+    text-align: center;
+    color: #232124; 
+}
+#summation_week td:nth-child(1), th:nth-child(1) { width: 310.2px; font-size: 37px;}
+#summation_week td:nth-child(2), th:nth-child(2) { width: 116.3px;}
+#summation_week td:nth-child(3), th:nth-child(3) { width: 116.3px;}
+#summation_week td:nth-child(4), th:nth-child(4) { width: 116.3px;}
+#summation_week td:nth-child(5), th:nth-child(5) { width: 116.3px;}
+#summation_week td:nth-child(6), th:nth-child(6) { width: 116.3px;}
+#summation_week td:nth-child(7), th:nth-child(7) { width: 116.3px;}
+#summation_week td:nth-child(8), th:nth-child(8) { width: 116.3px;}
+#summation_week td:nth-child(9), th:nth-child(9) { width: 116.3px;}
+#summation_week td:nth-child(10), th:nth-child(10) { width: 116.3px;}
+#summation_week td:nth-child(11), th:nth-child(11) { width: 116.3px;}
+#summation_week td:nth-child(12), th:nth-child(12) { width: 116.3px;}
+#summation_week td:nth-child(13), th:nth-child(13) { width: 116.3px;}
+#summation_week td:nth-child(14), th:nth-child(14) { width: 116.3px;}
+#summation_week td:nth-child(15), th:nth-child(15) { width: 116.3px;}
+#summation_week td:nth-child(16), th:nth-child(16) { width: 116.3px;}
+#summation_week td:nth-child(17), th:nth-child(17) { width: 116.3px;}
+#summation_week td:nth-child(18), th:nth-child(18) { width: 116.3px;}
+#summation_week td:nth-child(19), th:nth-child(19) { width: 116.3px;}
+#summation_week td:nth-child(20), th:nth-child(20) { width: 201px;}
+
+
+
 #month{
     position: relative;
 }
