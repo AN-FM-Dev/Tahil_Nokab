@@ -16,13 +16,8 @@ function getSheetData($service, $spreadsheetId, $ranges = []) {
 }
 
 
-$elmy_monitoring         = "1ltaWC3ZI_14gDxwx1UPg3p2_FQ7b4VLd9WCC_MM7LUE";
-$ahadeth_monitoring      = "1If4k26sDM5IGuRgU1Qb1eQ2Z48oNp05lfsMYvlQMWXk";
-$fekh_monitoring         = "1-UZezOS6w7JADPsXT0NCoksBOdj6Fz410FC_Fs6U5Sw";
-$summation_monitoring    = "153J0f2lPSD0dZwCrsXo3Tw11owNMYDmHzxZcF2NYfZU";
-$summer48                = "";
-
-
-//echo 'elmy';
-//echo 'ahadeth';
-//echo 'fekh';
+$elmy_monitoring         = "SecretKey :)";
+$ahadeth_monitoring      = "SecretKey :)";
+$fekh_monitoring         = "SecretKey :)";
+$summation_monitoring    = "SecretKey :)";
+$summer48                = "SecretKey :)";
